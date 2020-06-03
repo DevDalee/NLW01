@@ -17,7 +17,7 @@
 // const n2 = 12
 // document.write(n1 + n2)
 
-// boolean - true ou false
+// boolean - true or false
 // const bTrue = true
 // const bFalse = false
 // document.write(bFalse)
