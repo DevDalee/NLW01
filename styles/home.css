@@ -1,9 +1,7 @@
 #page-home{
     height: 100vh;
-
     background: url('../assets/home-background.svg') no-repeat;
-
-    background-position: 35vw bottom;
+    background-position: 35vw 10vw;
 }
 
 #page-home .content{
@@ -16,9 +14,7 @@
 }
 
 #page-home header{
-
-    margin-top: 48px;
-
+    margin-top: 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -49,11 +45,11 @@
 }
 
 #page-home main h1{
-    font-size: 54px;
+    font-size: 50px;
 }
 
 #page-home main p{
-    font-size: 24px;
+    font-size: 20px;
     line-height: 38px;
     margin-top: 24px;
 }
@@ -81,8 +77,8 @@
 }
 
 #page-home main a span{
-    width: 72px;
-    height: 72px;
+    width: 70px;
+    height: 70px;
 
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;

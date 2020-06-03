@@ -66,14 +66,14 @@ form .field{
 
 form .field-group{
     display: flex;
-
 }
 
 form input, form select{
     background-color: var(--default-color);
+    font-family: Roboto;
 
     border: 0;
-    padding: 16px 24px;
+    padding: 15px 20px;
     font-size: 16px;
     border-radius: 8px;
     outline-color: black;

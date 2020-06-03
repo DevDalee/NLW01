@@ -1,6 +1,7 @@
-@media (max-width: 900px){
+@media (max-width: 1024px){
     #page-home{
-        background-position-x: 70vw;
+        background-position-x: 1000vw;
+        background-position-y: 20vw;
     }
     #page-home .content{
         align-items: center;
@@ -8,7 +9,7 @@
     }
     #page-home header a { 
         position: absolute;
-        bottom: 48px;
+        bottom: 75px;
 
         left: 50%;
         transform: translateX(-50%)
@@ -16,15 +17,52 @@
     #page-home main{
         align-items: center;
     }
-}
-
-@media(min-width:1700px){
-    #page-home{
-        background-position-x: 40vw;
+    #page-serch-results .card{
+        grid-template-columns: 1fr;
     }
 }
-@media(max-height: 760px) {
+
+@media(min-width:1400px){
     #page-home{
-        background-position-y: 200px;
+        background-position-x: 40vw;
+        background-position-y: 0vw;
+    }
+}
+@media(min-height: 768px) {
+    #page-home{
+        background-position-y: 12vw;
+    }
+}
+@media(max-width:450px){
+    #page-home header a{
+        position: absolute;
+        bottom: 13px;
+    }
+}
+@media(max-width:600px){
+    form{
+        width: 550px;
+    }
+    #page-create-point header {
+        width: 600px;
+    }
+    #page-create-point header a {
+        margin-right: 30px;
+    }
+    #modal form{
+        width: 300px;
+    }
+    form input, form select{
+        width: 200px;
+        flex-direction: column;
+        grid-template-columns: 1fr;
+    }
+    #modal form button{
+        width: 50px;
+        height: 50px;
+    }
+    #modal form input{
+        padding: 10px;
+        font-size: 17px;
     }
 }
