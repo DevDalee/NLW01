@@ -1,15 +1,15 @@
-function populateUFs(){
+function populateUFs() {
     const ufSelect = document.querySelector("select[name=uf]")
 
     fetch("https://servicodados.ibge.gov.br/api/v1/localidades/estados")
-    .then( res => res.json())
-    .then( states => {
-        
-        for ( const state of states ) {
-            ufSelect.innerHTML += `<option value="${state.id}">${state.nome}</option>`
-        }
+        .then(res => res.json())
+        .then(states => {
 
-    })
+            for (const state of states) {
+                ufSelect.innerHTML += `<option value="${state.id}">${state.nome}</option>`
+            }
+
+        })
 }
 
 populateUFs()
@@ -31,16 +31,16 @@ function getCities(event) {
     citySelect.disabled = true
 
     fetch(url)
-    .then( res => res.json() )
-    .then( cities => {
-        
+        .then(res => res.json() )
+        .then(cities => {
 
-        for ( const city of cities){
-            citySelect.innerHTML += `<option value="${city.id}">${city.nome}</option>`
-        }
 
-        citySelect.disabled = false
-    })
+            for (const city of cities) {
+                citySelect.innerHTML += `<option value="${city.id}">${city.nome}</option>`
+            }
+
+            citySelect.disabled = false
+        })
 }
 
 
@@ -52,46 +52,48 @@ document
 //pegar todos os li's
 const itemsToCollect = document.querySelectorAll(".items-grid li")
 
-for (const item of itemsToCollect){
-item.addEventListener("click", handleSelectedItem)
+for (const item of itemsToCollect) {
+    item.addEventListener("click", handleSelectedItem)
 }
+
 const collectedItems = document.querySelector("input[name=items]")
 
 
 let selectedItems = []
 
-function handleSelectedItem(event){
-const itemLi= event.target
+function handleSelectedItem(event) {
+    const itemLi = event.target
 
-// add or remove uma classe com JS
-itemLi.classList.toggle("selected")
+    // add or remove uma classe com JS
+    itemLi.classList.toggle("selected")
 
-const itemId= itemLi.dataset.id
+    const itemId = itemLi.dataset.id
+    //console.log('ITEM ID: ', itemId)
 
-//verificar se existem itens selecionados, se sim pegar os itens selecionados
+    //verificar se existem itens selecionados, se sim pegar os itens selecionados
 
-const alredySelected = selectedItems.findIndex( item => {
-    const itemFound = item  == itemId //true or false
-    return itemFound
-})
-
-// se já estiver selecionado, tirar da seleção
-if ( alredySelected >= 0) {
-    //tirar da seleção
-    const filteredItems = selectedItems.filter( item => {
-        const itemIsDifferent = item != itemId //false
-        return itemIsDifferent
+    const alredySelected = selectedItems.findIndex(item => {
+        const itemFound = item == itemId //true or false
+        return itemFound
     })
 
-    selectedItems = filteredItems
-} else {
-    //se não estiver selecionado adcionar à seleção
+    // se já estiver selecionado, tirar da seleção
+    if (alredySelected >= 0) {
+        //tirar da seleção
+        const filteredItems = selectedItems.filter(item => {
+            const itemIsDifferent = item != itemId //false
+            return itemIsDifferent
+        })
 
-    selectedItems.push(itemId)
+        selectedItems = filteredItems
+    } else {
+        //se não estiver selecionado adcionar à seleção
 
-}
+        selectedItems.push(itemId)
 
-// atualizar o campo escondido com os itens selecionados
-collectedItems.value = selectedItems
+    }
+    //console.log("selectedItems: ", selectedItems )
+    // atualizar o campo escondido com os itens selecionados
+    collectedItems.value = selectedItems
 
 }
